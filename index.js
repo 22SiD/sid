@@ -32,7 +32,7 @@ app.route("/best")
     })
     .put(async (req, res) => {
         console.log(req.body);
-        let s = await detail.updateOne({"age": req.body.age}, { "$set": {"name":req.body.name,"city":req.body.city}})
+        let s = await detail.updateOne({"_id": req.body._id}, { "$set": {"name":req.body.name, "age": req.body.age, "city":req.body.city}})
         res.send(s);
         
 
